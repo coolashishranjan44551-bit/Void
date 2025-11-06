@@ -2,65 +2,16 @@
 
 Void is a one-page AI-inspired mindfulness companion. This repo contains a Vite + React implementation that matches the product outline: onboarding drawer, daily plan card, AI-generated script with breathing timer, streak tracking, and privacy messaging.
 
-## Prerequisites
-
-- Node.js 18 or newer (LTS recommended)
-- npm 9 or newer (bundled with Node)
-
-Check your versions:
+## Getting started
 
 ```bash
-node --version
-npm --version
+npm install
+npm run dev
 ```
-
-## Running locally
-
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Start the development server with hot reloading:
-   ```bash
-   npm run dev
-   ```
-3. Open http://localhost:5173/ in your browser. Vite will automatically reload when you edit files in `src/`.
 
 > **Note:** Package installation requires access to the npm registry. If you are working offline, mirror the dependencies listed in `package.json`.
 
-## Building for production
-
-Create an optimized production build:
-
-```bash
-npm run build
-```
-
-The static assets are output to `dist/`. To preview the build locally you can run:
-
-```bash
-npm run preview
-```
-
-## Deploying as a web page
-
-The `dist/` folder can be deployed to any static hosting provider. Common options include:
-
-- **Vercel**
-  1. Install the Vercel CLI and log in (`npm i -g vercel && vercel login`).
-  2. Run `npm run build`.
-  3. Deploy with `vercel --prod`, pointing to the `dist/` directory when prompted.
-
-- **Netlify**
-  1. Install the Netlify CLI (`npm i -g netlify-cli`).
-  2. Build the project locally with `npm run build`.
-  3. Deploy with `netlify deploy --dir=dist` (add `--prod` for production).
-
-- **GitHub Pages**
-  - **Automatic (recommended)**: The repo ships with a GitHub Actions workflow (`.github/workflows/deploy.yml`) that builds on every push to `main` and publishes the result to the `gh-pages` branch. Enable Pages in **Settings → Pages** and select "GitHub Actions" as the source.
-  - **Manual**: Run `npm run build && npm run deploy` locally. This uses the bundled `gh-pages` CLI to push `dist/` to the `gh-pages` branch.
-
-If you prefer manual hosting (e.g., S3, Cloudflare Pages, or a custom server), upload the files in `dist/` to your host's public directory and ensure the root is served as `index.html`.
+The dev server runs at http://localhost:5173/ by default.
 
 ## Key features
 
@@ -106,6 +57,6 @@ If you prefer manual hosting (e.g., S3, Cloudflare Pages, or a custom server), u
 - Completing checkout updates streak count and stores notes locally.
 - Privacy modal and crisis banner behave per the MVP spec.
 
-## Deployment roadmap
+## Deployment
 
-For PWA capabilities (notifications, offline scripts), integrate a service worker and add manifest metadata. Ensure a privacy policy is hosted and linked in the footer before launch.
+Use `npm run build` to produce static assets in `dist/`. The output is compatible with Netlify, Vercel, or any static host. For PWA capabilities (notifications, offline scripts), integrate a service worker in a future iteration.
